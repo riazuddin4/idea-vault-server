@@ -1,0 +1,72 @@
+# =========================
+# Dependencies
+# =========================
+node_modules/
+/.pnp
+.pnp.js
+
+# =========================
+# Next.js & Build Outputs
+# =========================
+/.next/
+/out/
+/build
+/dist
+
+# =========================
+# Environment Variables
+# =========================
+# Never commit your .env files to version control!
+.env
+.env.*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =========================
+# Testing
+# =========================
+/coverage
+/.nyc_output
+
+# =========================
+# Logs & Debugging
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
+next-env.d.ts
+
+# =========================
+# Backend & Databases 
+# =========================
+# Prisma (if you are using SQLite)
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+/prisma/dev.db
+/prisma/dev.db-journal
+
+# =========================
+# Vercel & Hosting
+# =========================
+.vercel
+
+# =========================
+# OS & IDE Settings
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
