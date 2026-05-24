@@ -117,13 +117,13 @@ async function run() {
     });
 
 
-    // app.post("/ideas", verifyToken, async (req, res) => {
-    //   const ideasData = req.body;
-    //   // console.log(ideasData);
-    //   const result = await coursesCollection.insertOne(ideasData);
+    app.post("/ideas", verifyToken, async (req, res) => {
+      const ideasData = req.body;
+      // console.log(ideasData);
+      const result = await coursesCollection.insertOne(ideasData);
 
-    //   res.send(result);
-    // });
+      res.send(result);
+    });
 
     app.get('/my-ideas', async (req, res) => {
       const email = req.query.email;
