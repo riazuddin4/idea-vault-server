@@ -225,7 +225,16 @@ async function run() {
       res.json(rusult);
     });
 
-  
+    app.patch('/ideas/:ideaId/comments/:commentId', verifyToken, async (req, res) => {
+      const { commentId } = req.params;
+      const { comment } = req.body;
+
+      const result = await commentsCollection.updateOne(
+        { _id: new ObjectId(commentId) },
+        { $set: { comment: comment } }
+      );
+      res.json(result);
+    });
 
 
     console.log('Pinged your deployment. You successfully connected to MongoDB!');
