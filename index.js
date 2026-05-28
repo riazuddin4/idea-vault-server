@@ -117,7 +117,7 @@ async function run() {
     });
 
 
-    app.post("/ideas",  async (req, res) => {
+    app.post("/ideas", async (req, res) => {
       const ideasData = req.body;
       // console.log(ideasData);
       const result = await coursesCollection.insertOne(ideasData);
@@ -217,6 +217,16 @@ async function run() {
       const result = await coursesCollection.deleteOne({ _id: new ObjectId(ideasId) });
       res.json(result);
     });
+
+    app.delete('/ideas/:ideasId/comments/:commentId', verifyToken, async (req, res) => {
+      const { commentId } = req.params;
+      // const userId = req.user.id;
+      const rusult = await commentsCollection.deleteOne({ _id: new ObjectId(commentId) });
+      res.json(rusult);
+    });
+
+  
+
 
     console.log('Pinged your deployment. You successfully connected to MongoDB!');
   } finally {
